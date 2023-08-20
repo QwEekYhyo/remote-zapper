@@ -1,10 +1,18 @@
-# Echo client program
 import socket
 
-HOST = 'localhost'    # The remote host
-PORT = 50007              # The same port as used by the server
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.connect((HOST, PORT))
-    s.sendall(b'Hello, world')
-    data = s.recv(1024)
-print('Received', repr(data))
+def send_signal(host, port, num):
+    s = socket.socket()
+    s.connect((host, port))
+    s.sendall(f'{num}'.encode())
+    s.close()
+
+HOST = "localhost"
+PORT = 50007
+
+working = True
+while working:
+    data = input("Enter a number : ")
+    if data == 69:
+        working = False
+    else:
+        send_signal(HOST, PORT, data)
