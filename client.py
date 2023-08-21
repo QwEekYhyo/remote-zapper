@@ -6,13 +6,13 @@ def send_signal(host, port, num):
     s.sendall(f'{num}'.encode())
     s.close()
 
-HOST = "localhost"
+HOST = "192.168.1.4"
 PORT = 50007
 
 working = True
 while working:
     data = input("Enter a number : ")
-    if data == 69:
+    if data == "stop":
         working = False
     else:
         send_signal(HOST, PORT, data)
