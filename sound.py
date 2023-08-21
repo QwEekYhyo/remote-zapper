@@ -7,8 +7,7 @@ class Audio:
         interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
         self.volume = interface.QueryInterface(IAudioEndpointVolume)
         volume_range = self.volume.GetVolumeRange()
-        self.max = volume_range[1]
-        self.min = volume_range[0]
+        self.min, self.max = volume_range[:2]
         self.initial = self.volume.GetMasterVolumeLevel()
 
     def current(self):
