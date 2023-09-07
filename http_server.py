@@ -5,12 +5,12 @@ from markupsafe import escape
 def return_dict(status, message):
     return {"status": status, "message": message}
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
 audio = Audio()
 
 @app.route("/")
-def test():
-    return "<h1>Work in progress</h1>"
+def index():
+    return app.send_static_file("index.html")
 
 @app.route("/reset")
 def reset_volume():
@@ -31,4 +31,6 @@ def change_volume():
         stat = "not OK"
         msg = "Bad or no parameter \"turn\""
     return return_dict(stat, msg)
-app.run(debug=False, host="0.0.0.0")
+
+if __name__ == '__main__':
+    app.run(debug=False, host="0.0.0.0")

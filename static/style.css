@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+#container {
+    height: 50vh;
+    margin: 15vh 0 15vh 0;
+}
+
+#container div {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    background-color: #9683ec;
+    text-align: center;
+    margin: 0;
+    height: 20vh;
+    line-height: 20vh;
+}
+
+button {
+    cursor: pointer;
+    color: var(--main-green);
+    background-color: #9683ec;
+    border: min(0.5vh, 0.25vw) outset black;
+    border-radius: 30%;
+    height: 80%;
+    aspect-ratio: 1;
+    margin:5vh;
+}
+
+button:active {
+    background-color: #9370db;
+}
