@@ -10,20 +10,7 @@ audio = Audio()
 
 @app.route("/")
 def test():
-    return "<h1>This is a test</h1>"
-
-@app.route("/json")
-def json():
-    dic = {}
-    dic["pute"] = 100
-    dic["status"] = 200
-    return dic
-
-@app.route("/home")
-def hello():
-    return f"<h1>Hello {escape(request.args.get('name'))}</h1>" + "<p>This is your home page</p>"
-
-####### the serious shit begins here #######
+    return "<h1>Work in progress</h1>"
 
 @app.route("/reset")
 def reset_volume():
