@@ -31,4 +31,4 @@ def change_volume():
         stat = "not OK"
         msg = "Bad or no parameter \"turn\""
     return return_dict(stat, msg)
-app.run()
+app.run(debug=False, host="0.0.0.0")
