@@ -20,6 +20,7 @@ h1 {
     margin: 0;
     height: 20vh;
     line-height: 20vh;
+    font-size: 300%;
 }
 
 button {
@@ -31,6 +32,7 @@ button {
     height: 80%;
     aspect-ratio: 1;
     margin:5vh;
+    font-size: 200%;
 }
 
 button:active {
